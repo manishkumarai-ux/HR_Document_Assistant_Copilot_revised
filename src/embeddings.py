@@ -1,10 +1,12 @@
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 
-def get_embedding_model() -> OpenAIEmbeddings:
-    """Return an OpenAI embedding model instance.
+def get_embedding_model() -> GoogleGenerativeAIEmbeddings:
+    """Return a Google Generative AI embedding model instance.
 
-    The API key is read automatically from the OPENAI_API_KEY
-    environment variable by the LangChain client.
+    The API key is read automatically from the GOOGLE_API_KEY
+    environment variable.
     """
-    return OpenAIEmbeddings(model="text-embedding-3-small")
+    return GoogleGenerativeAIEmbeddings(
+        model="models/text-embedding-004"
+    )

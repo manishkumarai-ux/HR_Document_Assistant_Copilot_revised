@@ -1,11 +1,16 @@
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-def get_llm_model() -> ChatOpenAI:
-    """Return a ChatOpenAI LLM instance.
+def get_llm_model() -> ChatGoogleGenerativeAI:
+    """Return a Google Gemini chat model instance.
 
-    The API key is read automatically from the OPENAI_API_KEY
-    environment variable by the LangChain client.
+    The API key is read automatically from the GOOGLE_API_KEY
+    environment variable.
     """
-    return ChatOpenAI(model_name="gpt-5.4-2026-03-05", temperature=0)
-
+    return ChatGoogleGenerativeAI(
+        model="gemini-1.5-flash",
+        temperature=0
+    )
