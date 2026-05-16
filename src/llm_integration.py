@@ -11,6 +11,6 @@ def get_llm_model() -> ChatGoogleGenerativeAI:
     environment variable.
     """
     return ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-2.5-flash",
         temperature=0
     )
